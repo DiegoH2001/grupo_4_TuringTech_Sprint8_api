@@ -8,7 +8,8 @@ const express = require("express"),
 
   //Requires de rutas
   const productRutas = require("./src/routers/productRoute"),
-  usersRutas = require("./src/routers/userRoute");
+  usersRutas = require("./src/routers/userRoute"),
+  usersApi = require('./src/routers/api/usersApi')
   
   //Require middlewares globales
   const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
@@ -48,6 +49,8 @@ app.use(userLoggedMiddleware)
 //Uso de rutas requeridas
 app.use("/", productRutas);
 app.use("/", usersRutas);
+
+app.use('/api', usersApi)
 
 //Not-found
 app.use((req, res, next) => {
