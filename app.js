@@ -6,13 +6,14 @@ const express = require("express"),
   session = require("express-session"),
   cookies = require("cookie-parser");
 
-  //Requires de rutas
-  const productRutas = require("./src/routers/productRoute"),
+//Requires de rutas
+const productRutas = require("./src/routers/productRoute"),
   usersRutas = require("./src/routers/userRoute"),
-  usersApi = require('./src/routers/api/usersApi')
-  
-  //Require middlewares globales
-  const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
+  usersApi = require("./src/routers/api/usersApi"),
+  productApi = require("./src/routers/api/productApi");
+
+//Require middlewares globales
+const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 
 //Carpeta estática de archivos públicos (imágenes,css, etc.)
 app.use(express.static(path.resolve(__dirname, "./public")));
@@ -34,26 +35,28 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 //Uso de express-session
-app.use(session({
-  secret: "Secret Session",
-  resave:false,
-  saveUninitialized:false
-}))
+app.use(
+  session({
+    secret: "Secret Session",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 //Uso de cookie-parser
-app.use(cookies())
+app.use(cookies());
 
 //Uso de middleware de session, es necesario emplearlo posteriormente al uso de express-session
-app.use(userLoggedMiddleware)
+app.use(userLoggedMiddleware);
 
 //Uso de rutas requeridas
 app.use("/", productRutas);
 app.use("/", usersRutas);
 
-app.use('/api', usersApi)
+app.use("/api", usersApi);
+app.use("/api", productApi);
 
 //Not-found
 app.use((req, res, next) => {
   res.status(404).render("not-found");
 });
-

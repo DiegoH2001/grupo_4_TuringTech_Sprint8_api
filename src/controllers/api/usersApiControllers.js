@@ -1,9 +1,7 @@
-
 const path = require("path");
-const DB = require ('../../database/models')
+const DB = require("../../database/models");
 
-const sequelize = DB.sequelize
-
+const sequelize = DB.sequelize;
 
 let usersApiControllers = {
     listarUsuario : (req , res) => {
@@ -11,4 +9,4 @@ let usersApiControllers = {
         }
     }
 
-    module.exports = usersApiControllers
+module.exports = usersApiControllers;
