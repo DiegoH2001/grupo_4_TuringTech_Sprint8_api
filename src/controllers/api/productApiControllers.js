@@ -3,10 +3,10 @@ const DB = require("../../database/models");
 
 const sequelize = DB.sequelize;
 
-let usersApiControllers = {
+let productApiControllers = {
   listar: (req, res) => {
-    DB.User.findAll().then((users) => res.json(users));
+    DB.Product.findAll().then((product) => res.json(product));
   },
 };
 
-module.exports = usersApiControllers;
+module.exports = productApiControllers;
