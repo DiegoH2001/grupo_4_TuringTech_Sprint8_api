@@ -100,21 +100,22 @@
     background-color: var(--rojo-fuego);
     border-radius: 3rem;
     border: 3px solid black;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
+    width: 25%;
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .productimage{
-    width: 90%;
+    width: 75%;
+    border-radius: 3rem;
 }
 
 .price{
-    font-size: 3rem;
+    font-size: 1.7rem;
     color: var(--marfil-tierra);
 }
 
@@ -130,6 +131,25 @@
     background-color: var(--violeta-fuego);
 }
 
+.button-index{
+    text-decoration: none;
+    color: var(--rojo-fuego);
+    background-color: var(--negro-intenso-transparente);
+    padding: .7rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+.card-title-index{
+    color: var(--marfil-agua);
+    font-weight: 900;
+}
+
+.button-index a :hover {
+    
+    color: var(--violeta-fuego)  !important;
+    height: 10000px;
+}
 
 /* FIN PRODUCTOS DESTACADOS */
 
@@ -147,7 +167,7 @@
     }
 
     .price{
-        font-size: 1.5rem;
+        font-size: 1.0rem;
     }
 
     iframe{
@@ -155,11 +175,14 @@
     }
 
     .product1-inidex, .product2-inidex, .product3-inidex{
-        height: 40%;
+        height: 65%;
+    }
+
+    .button-index{
+        font-size: 10px;
+        
     }
     
-    .products{
-        height: 25rem;
-    }
+
 
 }
