@@ -158,6 +158,7 @@ switch (e.target.name){
 	break;
 	case "registroLock":
 		console.log("funciona")
+		validarPassword2();
 		if (expresiones.password.test(e.target.value)) {
 				
 			document.getElementById("p_error9").classList.remove("error_activo")
@@ -175,7 +176,8 @@ switch (e.target.name){
 	break;
 	case "registroLockRepeat":
 		console.log("funciona")
-		if (expresiones.password.test(e.target.value)) {
+		validarPassword2();
+	/*	if (expresiones.password.test(e.target.value)) {
 				
 			document.getElementById("p_error10").classList.remove("error_activo")
 			document.getElementById("registroLockRepeat").classList.add("borde_correcto_activo")
@@ -188,10 +190,33 @@ switch (e.target.name){
 			document.getElementById("registroLockRepeat").classList.remove("borde_correcto_activo")
 			document.getElementById("registroLockRepeat").classList.add("borde_incorrecto_activo")
 			errores.push("10")
-		}
+		}*/
 	break;
   };
 }
+
+
+
+
+const validarPassword2 = () => {
+	const inputPassword1 = document.getElementById('registroLock');
+	const inputpassword2 = document.getElementById('registroLockRepeat')
+
+
+	if(inputPassword1.value !== inputpassword2.value){
+		document.getElementById("p_error10").classList.add("error_activo")
+		document.getElementById("registroLockRepeat").classList.remove("borde_correcto_activo")
+		document.getElementById("registroLockRepeat").classList.add("borde_incorrecto_activo")
+		errores.push("10")
+	}else{
+		document.getElementById("p_error10").classList.remove("error_activo")
+		document.getElementById("registroLockRepeat").classList.add("borde_correcto_activo")
+		document.getElementById("registroLockRepeat").classList.remove("borde_incorrecto_activo")
+		while (errores.length >= 1) {
+			errores.pop()	
+	}
+
+}}
 
 
 inputs.forEach((input) => {
