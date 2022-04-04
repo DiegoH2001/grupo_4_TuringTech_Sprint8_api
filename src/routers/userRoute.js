@@ -18,25 +18,25 @@ const validationScheme = [
   body('registroFullname').notEmpty().isString(),
   body('registroUsuario')
     .notEmpty()
-    .isAlphanumeric('es-ES', { ignore: 's' })
+    .isAlphanumeric('es-ES')
     .isLength({ min: 1, max: 20 }),
   body('registroEmail').notEmpty().isEmail(),
   body('registroDni').notEmpty().isNumeric().isLength({ min: 8, max: 8 }),
   body('registroTel').notEmpty().isNumeric().isLength({ min: 10, max: 10 }),
-  body('registroDir').notEmpty().isAlphanumeric('es-ES', { ignore: 's' }),
+  body('registroDir').notEmpty().isAlphanumeric('es-ES', {'ignore': ' _-'}),
   body('registroDepto')
-    .isAlphanumeric('es-ES', { ignore: 's' })
+    .isAlphanumeric('es-ES', {'ignore': ' _-'})
     .optional({ nullable: true, checkFalsy: true }),
-  body('registroPostal').notEmpty().isAlphanumeric('es-ES', { ignore: 's' }),
+  body('registroPostal').notEmpty().isAlphanumeric('es-ES', {'ignore': ' _-'}),
   body('registroLocality').notEmpty().isString().isLength({ min: 1, max: 30 }),
   body('registroProvince').notEmpty().isString().isLength({ min: 1, max: 30 }),
   body('registroLock')
     .notEmpty()
-    .isAlphanumeric('es-ES', { ignore: 's' })
+    .isAlphanumeric('es-ES', {'ignore': ' _-'})
     .isLength({ min: 8, max: 30 }),
   body('registroLockRepeat')
     .notEmpty()
-    .isAlphanumeric('es-ES', { ignore: 's' })
+    .isAlphanumeric('es-ES', {'ignore': ' _-'})
     .isLength({ min: 8, max: 30 }),
   body('registroAvatar').optional({ nullable: true, checkFalsy: true }),
   body('registroRol').notEmpty(),

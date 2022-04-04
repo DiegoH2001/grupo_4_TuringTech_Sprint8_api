@@ -1,15 +1,20 @@
-const path = require("path");
-const DB = require("../../database/models");
+const path = require('path')
+const DB = require('../../database/models')
 
-const sequelize = DB.sequelize;
+const sequelize = DB.sequelize
 
 let productApiControllers = {
   listar: (req, res) => {
+<<<<<<< HEAD
     /**  DB.Product.findAll().then((products) => {
+=======
+    DB.Product.findAll().then((products) => {
+>>>>>>> 98609d3c9fd7feab8636094f314b4030689e14ec
       return res.status(200).json({
         total: products.length,
         data: products,
         status: 200,
+<<<<<<< HEAD
       });
     });
 */
@@ -68,7 +73,11 @@ let productApiControllers = {
           });
       })
     ];
+=======
+      })
+    })
+>>>>>>> 98609d3c9fd7feab8636094f314b4030689e14ec
   },
-};
+}
 
-module.exports = productApiControllers;
+module.exports = productApiControllers

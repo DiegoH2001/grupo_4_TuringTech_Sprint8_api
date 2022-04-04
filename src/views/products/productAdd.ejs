@@ -28,7 +28,7 @@
               />
             </div>
             <div class="main__register">
-              <select name="categorie_id" id="productCategory">
+              <select name="productCategory" id="productCategory">
                 <% for(let i = 0; i < categories.length;i++){ %>
                 <option value="<%= categories[i].id %>">
                     <%= categories[i].categorie_name %> 
@@ -48,7 +48,7 @@
               />
             </div>
             <div class="main__register">
-              <select name="brand_id" id="productBrand">
+              <select name="productBrand" id="productBrand">
                 <% for(let i = 0; i < brands.length;i++){ %>
                 <option value="<%= brands[i].id %>">
                     <%= brands[i].brand_name %> 
@@ -70,7 +70,7 @@
             <div class="main__register">
               <input
                 type="text"
-                name="product_name"
+                name="productName"
                 id="productName"
                 placeholder="Nombre del producto"
                 class="main__register-name"
@@ -93,7 +93,7 @@
             <div class="main__register">
               <input
                 type="text"
-                name="product_description"
+                name="productDescription"
                 id="productDescription"
                 placeholder="Descripción del producto"
                 class="main__register-user"
@@ -117,7 +117,7 @@
             <div class="main__register">
               <input
                 type="text"
-                name="product_descriptionplus"
+                name="productDescriptionLong"
                 id="productDescriptionLong"
                 placeholder="Descripción ampliada del producto"
                 class="main__register-user"
@@ -141,7 +141,7 @@
             <div class="main__register">
               <input
                 type="number"
-                name="price"
+                name="productPrice"
                 id="productPrice"
                 placeholder="Precio"
                 class="main__register-email"
@@ -151,7 +151,7 @@
             </div>
             <p class="formulario__input-error"> Debe tener al menos 2 numeros. No puede tener letras ni simbolos. </p>
           </div>
-          <!--Grupo: Stock
+          <!--Grupo: Stock-->
           <div class="main__container-lock <%= locals.errors && errors.productStock ? "productStock" : null %>" id="grupo__productStock">
             <p>Stock</p>
             <div class="main__bluebox">
@@ -164,7 +164,7 @@
             <div class="main__register">
               <input
                 type="text"
-                name="stock"
+                name="productStock"
                 id="productStock"
                 placeholder="Stock"
                 class="main__register-lock"
@@ -174,7 +174,7 @@
             </div>
             <p class="formulario__input-error"> Debe tener al menos 1 numero. No puede tener letras ni simbolos. </p>
           </div>
-          Grupo: Cuotas
+          <!--Grupo: Cuotas-->
           <div class="main__container-lock <%= locals.errors && errors.productFees ? "productFees" : null %>" id="grupo__productFees">
             <p>Cuotas</p>
             <div class="main__bluebox">
@@ -187,7 +187,7 @@
             <div class="main__register">
               <input
                 type="text"
-                name="product_fees"
+                name="productFees"
                 id="productFees"
                 placeholder="Cuotas"
                 class="main__register-lock"
@@ -197,7 +197,7 @@
             </div>
             <p class="formulario__input-error"> Debe colocar el numero de cuotas. No puede tener letras ni simbolos. </p>
           </div>
-          Grupo: Descuento
+          <!--Grupo: Descuento-->
           <div class="main__container-lock <%= locals.errors && errors.productDiscount ? "productDiscount" : null %>">
             <p>Descuento</p>
             <div class="main__bluebox">
@@ -208,7 +208,7 @@
               />
             </div>
             <div class="main__register">
-              <select name="discount_id" id="productDiscount">
+              <select name="productDiscount" id="productDiscount">
                 <% for(let i = 0; i < discounts.length;i++){ %>
                 <option value="<%= discounts[i].id %>">
                     <%= discounts[i].discount %> 
@@ -216,7 +216,7 @@
                 <% } %> 
               </select>
             </div>
-          </div>-->
+          </div>
           <!--Grupo: Imagen-->
           <div class="main__container-avatar <%= locals.errors && errors.imageProduct ? "imageProduct" : null %>">
             <p>Imágen de producto</p>
@@ -239,7 +239,7 @@
             </div>
           </div>
 
-                <!--Grupo: Visibilidad
+                <!--Grupo: Visibilidad-->
           <div class="main__container-rol <%= locals.errors && errors.productVisibility ? "productVisibility" : null %>">
             <p>Visibilidad</p>
             <div class="main__bluebox">
@@ -256,7 +256,7 @@
               </select>
             </div>
           </div>
-          Grupo: Destacado en Home
+          <!--Grupo: Destacado en Home-->
           <div class="main__container-rol <%= locals.errors && errors.productImportant ? "productImportant" : null %>">
             <p>Destacado en Home</p>
             <div class="main__bluebox">
@@ -272,7 +272,7 @@
                 <option value="destacado-no">No</option>
               </select>
             </div>
-          </div>-->
+          </div>
 
           <div class="formulario__mensaje" id="formulario__mensaje">
             <p> <i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
@@ -292,6 +292,6 @@
     <%- include("../partials/footer.ejs") %>
     <!-- fin footer-->
 
-   <!-- <script src="js/productAddValidation.js"> </script>-->
+    <script src="js/productAddValidation.js"> </script>
   </body>
 </html>
