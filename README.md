@@ -30,3 +30,10 @@ https://www.maximus.com.ar/   -> web con tematica oscura
 https://trello.com/b/NIotU0Kf/proyecto-integrador-dh-g-4
 
 
+
+Acceso para administrador.
+
+
+Usuario: admin@gmail.com
+pass:    adminasd
+
