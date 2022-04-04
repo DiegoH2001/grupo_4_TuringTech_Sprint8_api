@@ -26,12 +26,14 @@ let productApiControllers = {
     let perifericos = products.count({ where: { categorie_id: 8 } });
     let accesorios = products.count({ where: { categorie_id: 9 } });
 
-    Promise.all[(equipos,procesadoresCoolers,motherboard,memoriasRam,placasDeVideo,fuentesDeAlimentacion,gabinetes,perifericos,accesorios)]
+    Promise.all([equipos,procesadoresCoolers,motherboard,memoriasRam,placasDeVideo,fuentesDeAlimentacion,gabinetes,perifericos,accesorios])
       .then(categorie => {
-        
-        products.findAll({ include:["brand", "categorie", "discount"]})
+
+        DB.Product.findAll({ include:["brand", "categorie", "discount"]})
           .then(products => {
+
             let productsDetail = [];
+
             products.forEach((product) => {
               let productWithDetail = {
                 Product: product.name,
@@ -39,10 +41,13 @@ let productApiControllers = {
                 Description: product.product_description,
                 Price: product.price,
                 Image: product.sliced,
-                detail: `/api/productApi/${product.id}`,
+                detail: `/api/productApi/${product.id}`
               };
+
               productsDetail.push(productWithDetail);
+
             });
+
             let response = {
               meta: { status: 200, url: "api/productApi/" },
               totalProducts: products.length,
@@ -55,7 +60,7 @@ let productApiControllers = {
                 { fuentesDeAlimentacion: categorie[5] },
                 { gabinetes: categorie[6] },
                 { perifericos: categorie[7] },
-                { accesorios: categorie[8] },
+                { accesorios: categorie[8] }
               ],
               products: productsDetail,
             };
