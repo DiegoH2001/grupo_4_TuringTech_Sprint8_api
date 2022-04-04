@@ -3,18 +3,16 @@ const DB = require('../../database/models')
 
 const sequelize = DB.sequelize
 
+const products = DB.Product
+
 let productApiControllers = {
-  listar: (req, res) => {
-<<<<<<< HEAD
+  listarProductos: (req, res) => {
     /**  DB.Product.findAll().then((products) => {
-=======
     DB.Product.findAll().then((products) => {
->>>>>>> 98609d3c9fd7feab8636094f314b4030689e14ec
       return res.status(200).json({
         total: products.length,
         data: products,
         status: 200,
-<<<<<<< HEAD
       });
     });
 */
@@ -28,19 +26,11 @@ let productApiControllers = {
     let perifericos = products.count({ where: { categorie_id: 8 } });
     let accesorios = products.count({ where: { categorie_id: 9 } });
 
-    Promises.all[
-      (equipos,
-      procesadoresCoolers,
-      motherboard,
-      memoriasRam,
-      placasDeVideo,
-      fuentesDeAlimentacion,
-      gabinetes,
-      perifericos,
-      accesorios).then((categorie) => {
-        products
-          .findAll({ include: ["brand", "categorie", "discount"] })
-          .then((products) => {
+    Promise.all[(equipos,procesadoresCoolers,motherboard,memoriasRam,placasDeVideo,fuentesDeAlimentacion,gabinetes,perifericos,accesorios)]
+      .then(categorie => {
+        
+        products.findAll({ include:["brand", "categorie", "discount"]})
+          .then(products => {
             let productsDetail = [];
             products.forEach((product) => {
               let productWithDetail = {
@@ -72,12 +62,17 @@ let productApiControllers = {
             res.json(response);
           });
       })
-    ];
-=======
+    
+      
+    
+    },
+    detailProductos:(req,res) => {
+      DB.Product.findByPk(req.params.id,{
+        include:["brand", "categorie", "discount"]
       })
-    })
->>>>>>> 98609d3c9fd7feab8636094f314b4030689e14ec
-  },
-}
-
+      .then(product =>{
+        res.json(product)
+      })
+    }
+  }
 module.exports = productApiControllers
