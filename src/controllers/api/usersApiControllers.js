@@ -34,7 +34,7 @@ let usersApiControllers = {
         res.send(error))
     },
 
-detail: (req,res) => {
+    detalleUsuario: (req,res) => {
 
     DB.User
     .findByPk(req.params.id)
