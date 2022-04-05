@@ -72,11 +72,22 @@ let productApiControllers = {
     
     },
     detailProductos:(req,res) => {
-      DB.Product.findByPk(req.params.id,{
-        include:["brand", "categorie", "discount"]
+      DB.Product.findByPk(req.params.id,{include:["brand", "categorie", "discount"]
       })
       .then(product =>{
-        res.json(product)
+            let response = {
+              meta: {
+                status:200,
+                
+                url: '/api/detalleproducto/:id'
+              },
+              data:{
+                id: product.id,
+                name: product.product_name
+              }
+            }
+
+        res.json(response)
       })
     }
   }
