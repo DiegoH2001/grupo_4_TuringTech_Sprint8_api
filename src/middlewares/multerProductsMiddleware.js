@@ -25,7 +25,7 @@ const uploadProducts = multer({
   storage,
   fileFilter,
   limits: {
-    fileSize: 5048576,
+    fileSize: 10048576,
   },
 })
 
