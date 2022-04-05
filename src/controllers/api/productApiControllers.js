@@ -87,6 +87,18 @@ let productApiControllers = {
         data: {
           id: product.id,
           name: product.product_name,
+          description: product.product_description,
+          descriptionplus: product.product_descriptionplus,
+          price: product.price,
+          stock: product.stock,
+          visibility: product.visibility,
+          sliced: product.sliced,
+          fees: product.product_fees,
+          main: product.product_main,
+          idcategory: product.categorie_id,
+          idbrand: product.brand_id,
+          iddiscount: product.discount_id
+
         },
       }
 
