@@ -40,7 +40,6 @@ let productApiControllers = {
       fuentesDeAlimentacion,
       gabinetes,
       perifericos,
-<<<<<<< HEAD
       accesorios).then((categorie) => {
         products
           .findAll({ include: ["brand", "categorie", "discount"] })
@@ -81,77 +80,3 @@ let productApiControllers = {
 };
 
 module.exports = productApiControllers;
-=======
-      accesorios,
-    ]).then((categorie) => {
-      DB.Product.findAll({ include: ['brand', 'categorie', 'discount'] }).then(
-        (products) => {
-          let productsDetail = []
-
-          products.forEach((product) => {
-            let productWithDetail = {
-              Product: product.name,
-              Id: product.id,
-              Description: product.product_description,
-              Price: product.price,
-              Image: product.sliced,
-              detail: `/api/productApi/${product.id}`,
-            }
-
-            productsDetail.push(productWithDetail)
-          })
-
-          let response = {
-            meta: { status: 200, url: 'api/productApi/' },
-            totalProducts: products.length,
-            countByCategorie: [
-              { equipos: categorie[0] },
-              { procesadoresCoolers: categorie[1] },
-              { motherboard: categorie[2] },
-              { memoriasRam: categorie[3] },
-              { placasDeVideo: categorie[4] },
-              { fuentesDeAlimentacion: categorie[5] },
-              { gabinetes: categorie[6] },
-              { perifericos: categorie[7] },
-              { accesorios: categorie[8] },
-            ],
-            products: productsDetail,
-          }
-          res.json(response)
-        },
-      )
-    })
-  },
-  detailProductos: (req, res) => {
-    DB.Product.findByPk(req.params.id, {
-      include: ['brand', 'categorie', 'discount'],
-    }).then((product) => {
-      let response = {
-        meta: {
-          status: 200,
-          url: `/api/detalleproducto/:${product.id}`,
-        },
-        data: {
-          id: product.id,
-          name: product.product_name,
-          description: product.product_description,
-          descriptionplus: product.product_descriptionplus,
-          price: product.price,
-          stock: product.stock,
-          visibility: product.visibility,
-          sliced: product.sliced,
-          fees: product.product_fees,
-          main: product.product_main,
-          idcategory: product.categorie_id,
-          idbrand: product.brand_id,
-          iddiscount: product.discount_id
-
-        },
-      }
-
-      res.json(response)
-    })
-  },
-}
-module.exports = productApiControllers
->>>>>>> 1df12e5887607fbc2f0b109510cc53b443161622
