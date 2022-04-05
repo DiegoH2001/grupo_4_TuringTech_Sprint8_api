@@ -43,10 +43,7 @@
 //             }
 //         }
 //     })
-// })
-
-const formulario = document.getElementById("form-edit");
-const inputs = document.querySelectorAll("#form-edit input");
+//})
 // Expresiones Regulares
 const expresiones = {
   //usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -56,6 +53,7 @@ const expresiones = {
   productPrice: /^\d{2,14}$/, // 2 a 14 numeros
   productStock: /^\d{1,14}$/, // 1 a 14 numeros
   productFees: /^\d{1,12}$/, // 0 a 12 numeros
+  img: /(.jpg|.jpeg|.png|.gif)$/i
 };
 const campos = {
   productName: false,
@@ -66,9 +64,15 @@ const campos = {
   productFees: false,
 };
 
+
+window.addEventListener('load',function(){})
+const formulario = document.getElementById("form-edit");
+const inputs = document.querySelectorAll("#form-edit input");
+
+
 const validarFormulario = (e) => {
-  switch (e.currentTarget.name) {
-    case "productName":
+  switch (e.target.name) {
+    case 'productName':
       if (expresiones.productName.test(e.target.value)) {
         document
           .getElementById("div__name")
@@ -286,23 +290,18 @@ const validarFormulario = (e) => {
   }
 };
 
-// const validarCampo = (expresion, input, campo) => {
-//     if(expresion.test(input.value)){
-//         document.getElementById(`div__${campo}`).classList.remove('main__container-rol-incorrecto');
-//         document.getElementById(`div__${campo}`).classList.add('main__container-rol-correcto');
-//         document.querySelector(`#div__${campo}` ).classList.remove('fa-circle-xmark');
-//         document.querySelector(`#div__${campo}`).classList.add('fa-check-circle');
-//         document.querySelector(`#div__${campo} .form__input-error`).classList.remove('form__input-error-activo');
-//         campos[campo] = true;
-//     } else {
-//         document.getElementById(`div__${campo}`).classList.add('main__container-rol-incorrecto');
-//         document.getElementById(`div__${campo}`).classList.remove('main__container-rol-correcto');
-//         document.querySelector(`#div__${campo} i`).classList.add('fa-circle-xmark');
-//         document.querySelector(`#div__${campo} i`).classList.remove('fa-check-circle');
-//         document.querySelector(`#div__${campo} .form__input-error`).classList.add('form__input-error-activo');
-//         campos[campo] = false;
-//     }
-// }
+let image = document.querySelector('.main__register-avatar')
+image.addEventListener('change',()=>{
+
+    if (!expresiones.img.exec(image.value)) {
+        document.querySelector(`#filee .form__input-error`).classList.add("form__input-error-activo");
+        campos.img = false;
+        image.value = "";
+    }else{
+        document.querySelector(`#filee .form__input-error`).classList.remove("form__input-error-activo");
+        campos.img = true;
+    }
+})
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
@@ -342,4 +341,48 @@ formulario.addEventListener("submit", function (e) {
       .classList.add("form__mensaje-activo");
   }
 });
- 
+
+
+
+
+
+
+//     case "productName":
+//         validarCampo(expresiones.productName, e.target, 'productName');
+//         break;
+//     case "productDescription":
+//         validarCampo(expresiones.productDescription, e.target, 'productDescription');
+//         break;
+//     case "productDescriptionLong":
+//         validarCampo(expresiones.productName, e.target, 'productDescriptionLong');
+//         break;
+//     case "productPrice":
+//         validarCampo(expresiones.productName, e.target, 'productPrice');
+//         break;
+//     case "productStock":
+//         validarCampo(expresiones.productName, e.target, 'productStock');
+//         break;
+//     case "productFees":
+//         validarCampo(expresiones.productName, e.target, 'productFees');
+//         break;
+
+
+    
+
+// const validarCampo = (expresioness, input, campo) => {
+//     if(expresion.test(input.value)){
+//         document.getElementById(`div__${campo}`).classList.remove('main__container-rol-incorrecto');
+//         document.getElementById(`div__${campo}`).classList.add('main__container-rol-correcto');
+//         document.querySelector(`#div__${campo}` ).classList.remove('fa-circle-xmark');
+//         document.querySelector(`#div__${campo}`).classList.add('fa-check-circle');
+//         document.querySelector(`#div__${campo} .form__input-error`).classList.remove('form__input-error-activo');
+//         campos[campo] = true;
+//     } else {
+//         document.getElementById(`div__${campo}`).classList.add('main__container-rol-incorrecto');
+//         document.getElementById(`div__${campo}`).classList.remove('main__container-rol-correcto');
+//         document.querySelector(`#div__${campo} i`).classList.add('fa-circle-xmark');
+//         document.querySelector(`#div__${campo} i`).classList.remove('fa-check-circle');
+//         document.querySelector(`#div__${campo} .form__input-error`).classList.add('form__input-error-activo');
+//         campos[campo] = false;
+//     }
+// }

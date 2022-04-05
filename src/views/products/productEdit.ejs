@@ -157,7 +157,7 @@
                         />
                         <i class="validacion fa-solid fa-circle-xmark"></i>
                       </div>
-                      <p class="form__input-error">Solo se aceptan numeros</p>
+                      <p class="form__input-error">Solo se aceptan numeros MAYOR o IGUAL a dos dígitos</p>
                     </div>
                     
           
@@ -230,7 +230,7 @@
                       
                     </div>
           
-                    <div class="main__container-avatar <%= locals.errors && errors.imageProduct ? "imageProduct" : null %>">
+                    <div id="filee" class="main__container-avatar  <%= locals.errors && errors.imageProduct ? "imageProduct" : null %>">
                       <p class="cursor" >Imágen de producto</p>
                       <div class="main__bluebox">
                         <img
@@ -249,6 +249,7 @@
                           oninvalid="this.setCustomValidity(' ')"
                         />
                         <i class="validacion fa-solid fa-circle-xmark"></i>
+                        <p  class="form__input-error">Las extenciones de archivo permitidas son: JPG, jpg, png, gif, jpeg, JPEG, PNG, GIF</p>
                       </div>
                     </div>
           
