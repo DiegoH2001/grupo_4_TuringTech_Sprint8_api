@@ -3,6 +3,6 @@ const router = express.Router()
 const apiController = require("../../controllers/api/usersApiControllers")
 
 router.get("/listarUsuario", apiController.listarUsuario)
-router.get('/detalleUsuario', apiController.detalleUsuario)
+router.get('/detalleUsuario/:id', apiController.detalleUsuario)
 
 module.exports = router

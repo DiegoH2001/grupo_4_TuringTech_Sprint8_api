@@ -4,7 +4,10 @@ const express = require("express"),
   app = express(),
   methodOverride = require("method-override"),
   session = require("express-session"),
-  cookies = require("cookie-parser");
+  cookies = require("cookie-parser"),
+  cors = require("cors");
+
+app.use(cors())
 
 //Requires de rutas
 const productRutas = require("./src/routers/productRoute"),
