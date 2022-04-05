@@ -7,7 +7,15 @@ const products = DB.Product
 
 let productApiControllers = {
   listarProductos: (req, res) => {
-
+    /**  DB.Product.findAll().then((products) => {
+    DB.Product.findAll().then((products) => {
+      return res.status(200).json({
+        total: products.length,
+        data: products,
+        status: 200,
+      });
+    });
+*/
     let equipos = products.count({ where: { categorie_id: 1 } })
     let procesadoresCoolers = products.count({ where: { categorie_id: 2 } })
     let motherboard = products.count({ where: { categorie_id: 3 } })
@@ -79,17 +87,6 @@ let productApiControllers = {
         data: {
           id: product.id,
           name: product.product_name,
-          description: product.product_description,
-          descriptionplus: product.product_descriptionplus,
-          price: product.price,
-          stock: product.stock,
-          visibility: product.visibility,
-          sliced: product.sliced,
-          fees: product.product_fees,
-          main: product.product_main,
-          idcategory: product.categorie_id,
-          idbrand: product.brand_id,
-          iddiscount: product.discount_id
         },
       }
 
