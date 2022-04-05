@@ -24,13 +24,23 @@ const validarFormulario = (e) => {
   switch (e.target.name) {
     case "productName":
       if (expresiones.productName.test(e.target.value)) {
+        document.querySelector("#grupo__nombre .formulario__input-error");
         document
-          .querySelector("#grupo__nombre .formulario__input-error")
+          .getElementById("productName")
+          .classList.add("borde_correcto_activo");
+        document
+          .getElementById("productName")
+          .classList.remove("borde_incorrecto_activo")
           .classList.remove("formulario__input-error-activo");
         campos["productName"] = true;
       } else {
+        document.querySelector("#grupo__nombre .formulario__input-error");
         document
-          .querySelector("#grupo__nombre .formulario__input-error")
+          .getElementById("productName")
+          .classList.add("borde_incorrecto_activo");
+        document
+          .getElementById("productName")
+          .classList.remove("borde_correcto_activo")
           .classList.add("formulario__input-error-activo");
         campos["productName"] = false;
       }
@@ -38,13 +48,23 @@ const validarFormulario = (e) => {
 
     case "productDescription":
       if (expresiones.productDescription.test(e.target.value)) {
+        document.querySelector("#grupo__descripcion .formulario__input-error");
         document
-          .querySelector("#grupo__descripcion .formulario__input-error")
+          .getElementById("productDescription")
+          .classList.add("borde_correcto_activo");
+        document
+          .getElementById("productDescription")
+          .classList.remove("borde_incorrecto_activo")
           .classList.remove("formulario__input-error-activo");
         campos["productDescription"] = true;
       } else {
+        document.querySelector("#grupo__descripcion .formulario__input-error");
         document
-          .querySelector("#grupo__descripcion .formulario__input-error")
+          .getElementById("productDescription")
+          .classList.add("borde_incorrecto_activo");
+        document
+          .getElementById("productDescription")
+          .classList.remove("borde_correcto_activo")
           .classList.add("formulario__input-error-activo");
         campos["productDescription"] = false;
       }
@@ -52,13 +72,27 @@ const validarFormulario = (e) => {
 
     case "productDescriptionLong":
       if (expresiones.productDescriptionLong.test(e.target.value)) {
+        document.querySelector(
+          "#grupo__descripcionLong .formulario__input-error"
+        );
         document
-          .querySelector("#grupo__descripcionLong .formulario__input-error")
+          .getElementById("productDescriptionLong")
+          .classList.add("borde_correcto_activo");
+        document
+          .getElementById("productDescriptionLong")
+          .classList.remove("borde_incorrecto_activo")
           .classList.remove("formulario__input-error-activo");
         campos["productDescriptionLong"] = true;
       } else {
+        document.querySelector(
+          "#grupo__descripcionLong .formulario__input-error"
+        );
         document
-          .querySelector("#grupo__descripcionLong .formulario__input-error")
+          .getElementById("productDescriptionLong")
+          .classList.add("borde_incorrecto_activo");
+        document
+          .getElementById("productDescriptionLong")
+          .classList.remove("borde_correcto_activo")
           .classList.add("formulario__input-error-activo");
         campos["productDescriptionLong"] = false;
       }
@@ -80,13 +114,25 @@ const validarFormulario = (e) => {
 
     case "productStock":
       if (expresiones.productStock.test(e.target.value)) {
+        document.querySelector("#grupo__productStock .formulario__input-error");
         document
-          .querySelector("#grupo__productStock .formulario__input-error")
+          .getElementById("productStock")
+          .classList.add("borde_correcto_activo");
+        document
+          .getElementById("productStock")
+          .classList.remove("borde_incorrecto_activo")
           .classList.remove("formulario__input-error-activo");
         campos["productStock"] = true;
       } else {
+        document.querySelector(
+          "#grupo__productStock  .formulario__input-error"
+        );
         document
-          .querySelector("#grupo__productStock  .formulario__input-error")
+          .getElementById("productStock")
+          .classList.add("borde_incorrecto_activo");
+        document
+          .getElementById("productStock")
+          .classList.remove("borde_correcto_activo")
           .classList.add("formulario__input-error-activo");
         campos["productStock"] = false;
       }
@@ -94,13 +140,23 @@ const validarFormulario = (e) => {
 
     case "productFees":
       if (expresiones.productFees.test(e.target.value)) {
+        document.querySelector("#grupo__productFees .formulario__input-error");
         document
-          .querySelector("#grupo__productFees .formulario__input-error")
+          .getElementById("productFees")
+          .classList.add("borde_correcto_activo");
+        document
+          .getElementById("productFees")
+          .classList.remove("borde_incorrecto_activo")
           .classList.remove("formulario__input-error-activo");
         campos["productFees"] = true;
       } else {
+        document.querySelector("#grupo__productFees .formulario__input-error");
         document
-          .querySelector("#grupo__productFees .formulario__input-error")
+          .getElementById("productFees")
+          .classList.add("borde_incorrecto_activo");
+        document
+          .getElementById("productFees")
+          .classList.remove("borde_correcto_activo")
           .classList.add("formulario__input-error-activo");
         campos["productFees"] = false;
       }
