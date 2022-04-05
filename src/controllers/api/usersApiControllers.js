@@ -36,22 +36,29 @@ let usersApiControllers = {
 
     detalleUsuario: (req,res) => {
 
-    DB.User
-    .findByPk(req.params.id)
+    DB.User.findByPk(req.params.id, {
+        include: ['rol']
+    })
     .then(user => {
         
-        let usuario = {
+        let response = {
+            meta: {
+                status:200,
+                url: `/api/detalleusuario/:'${user.id}`,
+            },
+            data: {
             id: user.id,
             name: user.user_fullname,
             email: user.user_email,
-            avatar: `/models/imageUser/${ImageUser.user_image_route}`
-
+            avatar: user.imageUser,
+            dni: user.user_dni,
+            cellphone: user.user_cellphone,
+            administrator: user.administrator
+        },
         }           
             
-            res.status(200).json(usuario);
-        }).catch(error =>
-            res.send(error));
-
+            res.json(response);
+        })
 }
 };
 
