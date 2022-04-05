@@ -207,7 +207,6 @@
 .productImportant::after {
   content: "El elemento destacado no puede estar vacío";
 }
- 
 
 /*móvil*/
 
@@ -361,7 +360,6 @@
   font-size: 12px;
   margin-bottom: 0;
   color: #fff;
-  background-color: red;
   opacity: 1;
   display: none;
 }
@@ -383,7 +381,6 @@
 .formulario__mensaje {
   height: 35px;
   line-height: 35px;
-  background: #f32727;
   width: 50%;
   padding: 0 15px;
   border-radius: 3px;
@@ -396,4 +393,12 @@
 
 .formulario__mensaje b {
   font-size: 20px;
+}
+
+.borde_correcto_activo {
+  border: 2px solid green;
+}
+
+.borde_incorrecto_activo {
+  border: 2px solid red;
 }
