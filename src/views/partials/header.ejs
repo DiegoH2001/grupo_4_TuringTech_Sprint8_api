@@ -12,7 +12,7 @@
                     <img src="/images/header-assets/arrow.svg" alt="Flecha de opciones" class="header__profile-arrow">
                     <div class="header__profile-opts">
                         <a href="/pageProfile" class="header__profile-opts-main">Mi cuenta</a>
-                        <a href="http://localhost:3001/" target="_blank" class="header__profile-opts-main">Dashboard</a>
+                        <% if(locals.userLogged && locals.userLogged.administrator === true){ %> <a href="http://localhost:3001/" target="_blank" class="header__profile-opts-main">Dashboard</a>  <% } %> 
                         <a href="/out" class="header__profile-opts-logout">Cerrar sesión</a> 
                     </div>
                 </div>
