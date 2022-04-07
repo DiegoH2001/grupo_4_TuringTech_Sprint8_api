@@ -82,25 +82,31 @@
     object-fit:fill;
 }
 
+.card__description{
+    background-color: var(--negro-intenso-transparente);
+    margin: 0 2rem;
+    border-radius: 1rem;
+}
+
 .card__main .card__description {
     height:20rem ;
-    padding: 4rem 2rem 2rem 2rem ;
-    border-bottom: solid .5rem var(--marfil-tierra) ;
+    padding: 3.5rem 2rem 2rem 2rem;
     text-align: center;
 
 }
 
 .card__main .card__description h3{
-    color: var(--negro-intenso);
+    color: var(--blanco-agua);
     font-weight: 900;
 }
 
 .card__main .card__description h4{
-    color: var(--negro-intenso);
+    color: var(--blanco-agua);
     font-weight: 600;
 }
 
 .card__main .card__description p{
+    color: var(--blanco-agua);
     margin-top: 2rem;
     font-size: 1.3rem;
 }
@@ -119,7 +125,7 @@
     border-bottom-right-radius: 2rem;
     border-top-left-radius: 2rem;
     border-style:double;
-    
+    color:white;
 }
 
 .card__main .contact a {

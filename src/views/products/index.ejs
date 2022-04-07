@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD-->
-<%- include("../partials/head.ejs") %> 
-<!-- FIN HEAD-->
+<%- include("../partials/head.ejs") %>
+  <!-- FIN HEAD-->
 
 
-<body>
+  <body>
 
 
     <!-- HEADER + NAVBAR + LOGO -->
-    <%- include("../partials/header.ejs") %> 
-    <!-- FIN  HEADER + NAVBAR + LOGO -->
+    <%- include("../partials/header.ejs") %>
+      <!-- FIN  HEADER + NAVBAR + LOGO -->
 
 
 
-    <!-- MAIN (SLIDER, PRODUCTOS DESTACADOS, MAPS) -->
-    <main>
+      <!-- MAIN (SLIDER, PRODUCTOS DESTACADOS, MAPS) -->
+      <main class="main__index-main">
 
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="images/slider-assets/slide1.png" class="d-block w-100" alt="Imagen promo 1">
-              </div>
-              <div class="carousel-item">
-                <img src="images/slider-assets/slide2.png" class="d-block w-100" alt="Imagen promo 2">
-              </div>
-              <div class="carousel-item">
-                <img src="images/slider-assets/slide3.png" class="d-block w-100" alt="Imagen promo 3">
-              </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/slider-assets/slide1.png" class="d-block w-100" alt="Imagen promo 1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/slider-assets/slide2.png" class="d-block w-100" alt="Imagen promo 2">
+            </div>
+            <div class="carousel-item">
+              <img src="images/slider-assets/slide3.png" class="d-block w-100" alt="Imagen promo 3">
             </div>
           </div>
+        </div>
 
         <!-- 
     <div id="container-slider">
@@ -61,45 +61,51 @@
 
     </div> -->
 
-    <h1 class="titleD">Lo que te ofrecemos</h1>
-    
-<section class="products">
-    
+        <h1 class="titleD">Lo que te ofrecemos</h1>
 
-    <div class="product1-inidex  ">
-        <div>
-         <a href=""><img class="productimage" src="images/index-cards/pcgamer-index.jpg" alt="destacado1"></a>
-         
-         <p class="price">Las mejores pc preensambladas del mercado</p>
-         
-     </div>
-     <a href="mailto:contacto@turingtech.com.ar" class="button-index">Encontra la tuya!</a>
-     </div>
+        <section class="products">
 
 
-   <div class="product1-inidex">
-       <div>
-        <a href=""><img class="productimage" src="images/index-cards/equipo-gamer.jpg" alt="destacado1"></a>
-        <p class="price">Contamos con el mejor equipo de profesionales para asesorarte en tu compra</p>
-        
-    </div>
-    <a href="mailto:contacto@turingtech.com.ar" class="button-index">Contactanos!</a>
-    </div>
+          <div class="product1-inidex">
+            <div class="product-div-container">
+              <div>
+                <a href=""><img class="productimage" src="images/index-cards/pcgamer-index.jpg" alt="destacado1"></a>
+
+                <p class="price">Las mejores pc preensambladas del mercado</p>
+
+              </div>
+              <a href="mailto:contacto@turingtech.com.ar" class="button-index">Encontra la tuya!</a>
+            </div>
+          </div>
+
+
+          <div class="product1-inidex">
+            <div class="product-div-container">
+              <div>
+                <a href=""><img class="productimage" src="images/index-cards/equipo-gamer.jpg" alt="destacado1"></a>
+                <p class="price">Contamos con el mejor equipo de profesionales para asesorarte en tu compra</p>
+              </div>
+              <a href="mailto:contacto@turingtech.com.ar" class="button-index">Contactanos!</a>
+            </div>
+          </div>
 
 
 
-     <div class="product1-inidex">
-        <div>
-         <a href=""><img class="productimage" src="images/index-cards/perifericos-index.jpg" alt="destacado1"></a>
-         <p class="price">Los mejores perifericos en un solo lugar</p>
-         
-     </div>
-     <a href="mailto:contacto@turingtech.com.ar" class="button-index">Encontra el tuyo!</a>
-     </div>
+          <div class="product1-inidex">
+            <div class="product-div-container">
+              <div>
+                <a href=""><img class="productimage" src="images/index-cards/perifericos-index.jpg"
+                    alt="destacado1"></a>
+                <p class="price">Los mejores perifericos en un solo lugar</p>
 
-    
+              </div>
+              <a href="mailto:contacto@turingtech.com.ar" class="button-index">Encontra el tuyo!</a>
+            </div>
+          </div>
 
-    <!--   <div class="product1-inidex" style="width: 18rem;">
+
+
+          <!--   <div class="product1-inidex" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -125,20 +131,22 @@
       </div>-->
 
 
-</section>
+        </section>
 
 
 
-</main>
-    <!-- FIN MAIN (SLIDER, PRODUCTOS DESTACADOS, MAPS) -->
+      </main>
+      <!-- FIN MAIN (SLIDER, PRODUCTOS DESTACADOS, MAPS) -->
 
 
 
 
-    <!-- footer-->
-    <%- include("../partials/footer.ejs") %> 
-    <!-- fin footer-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+      <!-- footer-->
+      <%- include("../partials/footer.ejs") %>
+        <!-- fin footer-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
+  </body>
 
 </html>
