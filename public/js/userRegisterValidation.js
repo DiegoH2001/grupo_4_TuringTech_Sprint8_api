@@ -3,11 +3,11 @@ const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input")
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{1,16}$/, // Letras, numeros, guion y guion_bajo
+	usuario: /^[a-zA-ZÀ-ÿ\s0-9\_\-]{1,50}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,50}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{8,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{10,14}$/, // 7 a 14 numeros.
+	telefono: /^\d{10,10}$/, // 7 a 14 numeros.
 	dni: /^\d{8,8}$/,
 	zipcode: /^\d{1,5}$/
 }
@@ -107,7 +107,7 @@ switch (e.target.name){
 	break;
 	case "registroDir":
 		console.log("funciona")
-		if (expresiones.nombre.test(e.target.value)) {
+		if (expresiones.usuario.test(e.target.value)) {
 				
 			document.getElementById("p_error6").classList.remove("error_activo")
 			document.getElementById("registroDir").classList.add("borde_correcto_activo")
@@ -124,7 +124,7 @@ switch (e.target.name){
 	break;
 	case "registroDepto":
 		console.log("funciona")
-		if (expresiones.nombre.test(e.target.value)) {
+		if (expresiones.usuario.test(e.target.value)) {
 				
 			document.getElementById("p_error7").classList.remove("error_activo")
 			document.getElementById("registroDepto").classList.add("borde_correcto_activo")
