@@ -311,35 +311,22 @@ inputs.forEach((input) => {
   //console.log('click fuera del input')
 });
 
-formulario.addEventListener("submit", function (e) {
+formulario.addEventListener("submit",  (e) => {
   e.preventDefault();
   if (
     campos.productName &&
     campos.productDescription &&
     campos.productDescriptionLong &&
-    campos.productPrice &&
-    campos.productStock &&
-    campos.productFees
+    campos.productPrice 
   ) {
-    formulario.submit();
-    document
-      .getElementById("form__msj-exito")
-      .classList.add("form__msj-exito-activo");
-    setTimeout(() => {
-      document
-        .getElementById("form__msj-exito")
-        .classList.remove("form__msj-exito-activo");
+    formulario.submit()
+
+    document.getElementById("form__msj-exito").classList.add("form__msj-exito-activo");
+    setTimeout(() => {document.getElementById("form__msj-exito").classList.remove("form__msj-exito-activo");
     }, 5000);
 
-    document
-      .querySelectorAll(".main__container-rol-correcto")
-      .forEach((icono) => {
-        icono.classList.remove(".main__container-rol-correcto");
-      });
   } else {
-    document
-      .getElementById("form__mensaje")
-      .classList.add("form__mensaje-activo");
+    document.getElementById("form__mensaje").classList.add("form__mensaje-activo");
   }
 });
  

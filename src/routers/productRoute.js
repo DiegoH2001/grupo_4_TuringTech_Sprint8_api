@@ -16,15 +16,15 @@ const validationScheme = [
   body('productName')
     .notEmpty()
     .isAlphanumeric('es-ES',  {'ignore': ' _-'})
-    .isLength({ min: 5, max: 20 }),
+    .isLength({ min: 5, max: 50 }),
   body('productDescription')
     .notEmpty()
     .isAlphanumeric('es-ES',  {'ignore': ' _-'})
-    .isLength({ min: 5, max: 20 }),
+    .isLength({ min: 5, max: 60 }),
   body('productDescriptionLong')
     .notEmpty()
     .isAlphanumeric('es-ES',  {'ignore': ' _-'})
-    .isLength({ min: 5, max: 40 }),
+    .isLength({ min: 5, max: 60 }),
   body('productPrice').notEmpty().isNumeric(),
   body('productStock').notEmpty().isNumeric(),
   body('productFees').notEmpty().isNumeric(),

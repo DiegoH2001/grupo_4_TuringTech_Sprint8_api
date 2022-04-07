@@ -16,7 +16,7 @@ let usersApiControllers = {
                 name: user.user_fullname,
                 email: user.user_email,
                 detail:`api/usersApi/${user.id}`,
-                avatar: user.imageUser,
+                avatar: `/images/users-assets/${user.imageUser}`  ,
                 dni: user.user_dni,
                 cellphone: user.user_cellphone,
                 administrator: user.administrator

@@ -35,7 +35,7 @@ let productApiControllers = {
 
           products.forEach((product) => {
             let productWithDetail = {
-              Product: product.name,
+              name: product.product_name,
               Id: product.id,
               Description: product.product_description,
               Descriptionplus: product.product_descriptionplus,
