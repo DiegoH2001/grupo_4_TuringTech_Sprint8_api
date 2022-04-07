@@ -15,7 +15,11 @@ let usersApiControllers = {
                 id: user.id,
                 name: user.user_fullname,
                 email: user.user_email,
-                detail:`api/usersApi/${user.id}` 
+                detail:`api/usersApi/${user.id}`,
+                avatar: user.imageUser,
+                dni: user.user_dni,
+                cellphone: user.user_cellphone,
+                administrator: user.administrator
 
             };
             users.push(userForEach);
