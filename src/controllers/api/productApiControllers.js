@@ -38,8 +38,9 @@ let productApiControllers = {
               Product: product.name,
               Id: product.id,
               Description: product.product_description,
+              Descriptionplus: product.product_descriptionplus,
               Price: product.price,
-              Image: product.sliced,
+              Image: `/images/productos-assets/${product.imageProduct}` ,
               detail: `/api/productApi/${product.id}`,
             }
 
